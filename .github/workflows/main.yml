@@ -32,7 +32,8 @@ jobs:
           tags: indexer-framework:latest
           outputs: type=docker,dest=/tmp/indexer-framework.tar
           build-args: |
-            INDEXER=spl-lending
+            INDEXER=token-snapshot
+            SPL_TOKEN_MINTS=mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
       - name: Load image
         run: |
           docker load --input /tmp/indexer-framework.tar
@@ -79,4 +80,4 @@ jobs:
 #          fs_path: ./rootfs.squashfs
 #          private-key: ${{ secrets.WALLET_PRIVATE_KEY }}
 #          runtime_hash: XXXXXX
-#          indexer: spl-lending
+#          indexer: token-snapshot
